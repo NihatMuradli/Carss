@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e37544dad7.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Cars Azerbaijan</h1>
+
+    <div id="newcar">New car</div>
+    <div id="addCar">
+        <form id="carform" action="#">
+            <i id="icon" class="fas fa-times-circle"></i>
+            <h2>New Car Registration</h3>
+                <input id="carName" type="text" placeholder="Enter car name" required>
+                <input id="carModel" type="text" placeholder="Enter car model" required>
+                <input id="carYear" type="number" placeholder="Enter car year" required>
+                <input id="carPrice" type="number" placeholder="Enter car price" required>
+                <input id="carColor" type="text" placeholder="Enter car color" required>
+                <input id="carIMG" type="file" placeholder="Enter image url" required>
+                <input id="submitinput" type="submit">
+        </form>
+    </div>
+    <div id="content">
+        <!-- <div>
+            <img
+                src="data:image/jpeg;base64,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">
+            <p><b>30000</b></p>
+            <p>Ford Mustang</p>
+            <p>2016</p>
+            <p>Black</p>
+        </div> -->
+    </div>
+</body>
+
+</html>
